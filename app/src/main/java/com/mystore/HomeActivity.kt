@@ -1,5 +1,6 @@
 package com.mystore
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
@@ -37,8 +38,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val fab = findViewById(R.id.fab) as FloatingActionButton
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+            val addItemWizard:Intent = Intent(this, WizardActivity::class.java)
+            startActivity(addItemWizard)
         }
 
         val drawer = findViewById(R.id.drawer_layout) as DrawerLayout
