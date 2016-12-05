@@ -1,45 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorPrimary">
+    android:background="@android:color/white"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp">
 
-    <TextView
-        android:text="Tire a foto do seu produto"
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/wizard_text"
-        android:textSize="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:textAlignment="center"
-        android:layout_centerInParent="true"/>
+        android:inputType="textPersonName"
+        android:hint="Qual produto você irá adicionar?"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/itemName" />
 
-    
-    <LinearLayout
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:weightSum="1.0">
-        <Button
-            android:layout_width="0dip"
-            android:layout_weight=".75"
-            android:layout_height="75dp"
-            android:drawableTop="@drawable/ic_camera"
-            android:text="Adicionar Foto"
-            style="@style/flatButton"
-            android:id="@+id/photoButton" />
-        <Button
-            android:layout_width="0dip"
-            android:layout_weight=".25"
-            android:layout_height="75dp"
-            android:drawableTop="@drawable/ic_skip"
-            android:text="Continuar"
-            style="@style/flatButton"
-            android:id="@+id/cancelButton" />
-    </LinearLayout>
+        android:inputType="textMultiLine"
+        android:hint="Descreva seu produto"
+        android:maxLines="3"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/itemDescription"
+        android:lines="3"/>
 
-</RelativeLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:textColor="@color/colorPrimary"
+        android:hint="Qual o preco do seu produto?"
+        android:id="@+id/itemPrice" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/takeItemPhoto"
+            android:tint="@color/colorPrimary"
+            android:src="@drawable/ic_take_photo"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/takeItemPhoto"
+            android:tint="@color/colorPrimary"
+            android:id="@+id/useSavedItemPhoto"
+            android:src="@drawable/ic_take_saved_photo"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:weightSum="1.0">
+
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="0dip"
+                android:layout_weight=".50"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="Cancelar" />
+
+            <Button
+                android:id="@+id/addButton"
+                android:layout_width="0dip"
+                android:layout_weight=".50"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                android:layout_alignParentBottom="true"
+                android:text="Adicionar" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

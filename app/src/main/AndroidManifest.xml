@@ -26,6 +26,7 @@
             android:name=".WizardActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_wizard"
+            android:windowSoftInputMode="adjustPan"
             android:theme="@style/FullscreenTheme"></activity>
     </application>
 
